@@ -18,7 +18,7 @@ class Tmuxp < Formula
   end
 
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tmux"
 
   resource "libtmux" do
