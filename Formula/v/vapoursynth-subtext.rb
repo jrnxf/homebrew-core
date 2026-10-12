@@ -4,6 +4,7 @@ class VapoursynthSubtext < Formula
   url "https://github.com/vapoursynth/subtext/archive/refs/tags/R7.tar.gz"
   sha256 "5390048844b6bfaa2ef574a52158f5a31f5568790d98e64c99ac5543bf45d38d"
   license "MIT"
+  revision 1
   head "https://github.com/vapoursynth/subtext.git", branch: "master"
 
   bottle do
@@ -21,7 +22,7 @@ class VapoursynthSubtext < Formula
   depends_on "pkgconf" => :build
   depends_on "ffmpeg"
   depends_on "libass"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "vapoursynth"
 
   def install
