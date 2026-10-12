@@ -4,6 +4,7 @@ class VapoursynthVszip < Formula
   url "https://files.pythonhosted.org/packages/3e/5e/3823f1c3ce492c3f0acca288501e67cbd1de4be317c436c71d5fdfdd81c9/vapoursynth_vszip-22.1.0.tar.gz"
   sha256 "93c1aaf5867ad43e1f21b77418fa89b0b1ed2191d0c4bfb03a65c958826ed8c9"
   license "MIT"
+  revision 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91fe59da44379b0ebc5d6aad990aac27ea7127edad890de516dc422f10c094bc"
@@ -16,7 +17,7 @@ class VapoursynthVszip < Formula
   end
 
   depends_on "zig@0.16" => :build
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "vapoursynth"
 
   preserve_rpath # skip unnecessary relocation for plugin which avoids headerpad errors
