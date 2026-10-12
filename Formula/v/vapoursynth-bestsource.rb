@@ -4,6 +4,7 @@ class VapoursynthBestsource < Formula
   url "https://github.com/vapoursynth/bestsource/archive/refs/tags/R22.tar.gz"
   sha256 "8233ecf8f1bbc9edb2330ce0e0cf79a5f821220a95750edbcddf2fb0b46c0ed2"
   license "MIT"
+  revision 1
   head "https://github.com/vapoursynth/bestsource.git", branch: "master"
 
   livecheck do
@@ -24,7 +25,7 @@ class VapoursynthBestsource < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "ffmpeg"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "vapoursynth"
   depends_on "xxhash"
 
