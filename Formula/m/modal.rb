@@ -17,7 +17,7 @@ class Modal < Formula
 
   depends_on "rust" => :build # for `cbor2`
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 
@@ -157,6 +157,9 @@ class Modal < Formula
   end
 
   def install
+    # TODO: Remove when Python 3.15 is officially supported
+    inreplace "pyproject.toml", "requires-python = \">=3.10,<3.15\"", "requires-python = \">=3.10,<3.16\""
+
     virtualenv_install_with_resources
   end
 
