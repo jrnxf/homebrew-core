@@ -4,6 +4,7 @@ class Pivy < Formula
   url "https://github.com/coin3d/pivy/archive/refs/tags/0.6.11.tar.gz"
   sha256 "78f79bd7d1ce7e8140ceba4b1220136ea1f14b4403b1e463c59fa892feed961e"
   license "ISC"
+  revision 1
   head "https://github.com/coin3d/pivy.git", branch: "master"
 
   bottle do
@@ -20,7 +21,7 @@ class Pivy < Formula
   depends_on "swig" => :build
   depends_on "coin3d"
   depends_on "pyside"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "qtbase"
 
   # Apply FreeCAD fork's fixes for newer Swig. Part of https://github.com/coin3d/pivy/pull/149
