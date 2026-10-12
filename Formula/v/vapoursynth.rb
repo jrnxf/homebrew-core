@@ -6,6 +6,7 @@ class Vapoursynth < Formula
   url "https://files.pythonhosted.org/packages/69/6a/f9441173c91a3355a32b870522726ed2252cd3c7b04b45e499f30b1a2c98/vapoursynth-81.tar.gz"
   sha256 "3bf6c90ad737e8ffc5605b05a1ff29cd884f8632fbe0eb49a2705942073a96be"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 2
   head "https://github.com/vapoursynth/vapoursynth.git", branch: "master"
 
@@ -20,7 +21,7 @@ class Vapoursynth < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "vulkan-headers" => :build
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "zimg"
 
   # std::to_chars requires at least MACOSX_DEPLOYMENT_TARGET=13.3
