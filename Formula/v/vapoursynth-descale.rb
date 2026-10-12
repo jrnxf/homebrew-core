@@ -4,7 +4,7 @@ class VapoursynthDescale < Formula
   url "https://github.com/Irrational-Encoding-Wizardry/descale/archive/refs/tags/r8.tar.gz"
   sha256 "317d955cc2dfbc3fd1aecef2ea2d56e4f1cd99434492d71c6a1d48213ff35972"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/Irrational-Encoding-Wizardry/descale.git", branch: "master"
 
   bottle do
@@ -20,7 +20,7 @@ class VapoursynthDescale < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "vapoursynth"
 
   def install
