@@ -4,7 +4,7 @@ class VapoursynthOcr < Formula
   url "https://github.com/vapoursynth/vs-ocr/archive/refs/tags/R3.tar.gz"
   sha256 "e9da11b7f5f3e4acfee5890729769217aa5b385bb573cb303c2661d8d8a83712"
   license "MIT"
-  revision 1
+  revision 2
   version_scheme 1
   head "https://github.com/vapoursynth/vs-ocr.git", branch: "master"
 
@@ -21,7 +21,7 @@ class VapoursynthOcr < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tesseract"
   depends_on "vapoursynth"
 
