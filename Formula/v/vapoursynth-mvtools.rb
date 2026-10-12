@@ -4,6 +4,7 @@ class VapoursynthMvtools < Formula
   url "https://github.com/dubhatervapoursynth/vapoursynth-mvtools/archive/refs/tags/v29.tar.gz"
   sha256 "b1124604f76963e507c537839fd2ef1bee9b89b3c75bbd40c12a0c687aee6775"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/dubhatervapoursynth/vapoursynth-mvtools.git", branch: "master"
 
   livecheck do
@@ -26,11 +27,19 @@ class VapoursynthMvtools < Formula
   depends_on "pkgconf" => :build
 
   depends_on "fftw"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "vapoursynth"
 
   on_intel do
     depends_on "nasm" => :build
+  end
+
+  # Fix compilation on Linux
+  patch do
+    url "https://github.com/dubhatervapoursynth/vapoursynth-mvtools/commit/895bf5d145cf8d2f3633ebc3aba0e32fe4cd5a7d.patch?full_index=1"
+    sha256 "412d1d727d3c706a044c2f6cb0ec006114f69e89c6c81503d4fca0131a9c18a6"
+    type :unofficial
+    resolves "https://github.com/dubhatervapoursynth/vapoursynth-mvtools/pull/104"
   end
 
   def install
