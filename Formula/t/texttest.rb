@@ -20,7 +20,7 @@ class Texttest < Formula
   depends_on "adwaita-icon-theme"
   depends_on "gtk+3"
   depends_on "pygobject3"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "psutil" do
     url "https://files.pythonhosted.org/packages/aa/c6/d1ddf4abb55e93cebc4f2ed8b5d6dbad109ecb8d63748dd2b20ab5e57ebe/psutil-7.2.2.tar.gz"
