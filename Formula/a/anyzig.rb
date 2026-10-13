@@ -1,8 +1,8 @@
 class Anyzig < Formula
   desc "Universal zig executable that runs any version of zig"
   homepage "https://github.com/marler8997/anyzig"
-  url "https://github.com/marler8997/anyzig/archive/refs/tags/v2026_03_26.tar.gz"
-  sha256 "bad066c1d98a4ac469cf1d9a0203a3be65425d4cd0bc1f1a3dbf042ebb9c1c62"
+  url "https://github.com/marler8997/anyzig/archive/refs/tags/v2026_10_13.tar.gz"
+  sha256 "fa87b33ea91cda5f7df7bfb74fdb4ead644b53f68a5bdf9480b7292bcb1affbe"
   license "MIT"
 
   livecheck do
@@ -24,17 +24,15 @@ class Anyzig < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ec5b50befefe7b3e36c11b2ad750ba9e64905a1594fc3ec5d74a08b5e8abd82"
   end
 
-  # Aligned to `zig@0.14` formula. Can be removed if upstream updates to newer Zig.
-  deprecate! date: "2026-08-19", because: "does not build with Zig >= 0.15"
-  disable! date: "2027-08-19", because: "does not build with Zig >= 0.15"
+  keg_only "it conflicts with zig"
 
-  depends_on "zig@0.14" => :build # https://github.com/marler8997/anyzig/pull/76
+  depends_on "zig" => :build
 
-  on_macos do
-    depends_on maximum_macos: [:sequoia, :build] # TODO: remove with Zig 0.15+
+  deny_network_access!
+
+  def fetch
+    system "zig", "build", "--fetch"
   end
-
-  conflicts_with "zig", because: "both install `zig` binaries"
 
   def install
     args = %W[-Dforce-version=v#{version.to_s.tr(".", "_")}]
